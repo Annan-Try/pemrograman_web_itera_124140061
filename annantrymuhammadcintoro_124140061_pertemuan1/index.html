@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini POS - Kasir & Keranjang Belanja</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="app-header">
+      <h1>🛒 Mini POS</h1>
+      <p>Aplikasi Kasir &amp; Keranjang Belanja Sederhana</p>
+    </header>
+
+    <main class="main-grid">
+      <!-- FORM INPUT BARANG -->
+      <section class="card form-section">
+        <h2>Tambah Barang</h2>
+        <form id="item-form" novalidate>
+          <div class="form-group">
+            <label for="item-name">Nama Barang</label>
+            <input type="text" id="item-name" placeholder="Contoh: Buku Tulis" autocomplete="off" />
+            <span class="error-message" id="error-name"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="item-price">Harga Satuan (Rp)</label>
+            <input type="number" id="item-price" placeholder="Contoh: 5000" min="0" />
+            <span class="error-message" id="error-price"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="item-qty">Jumlah / Qty</label>
+            <input type="number" id="item-qty" placeholder="Contoh: 1" min="1" />
+            <span class="error-message" id="error-qty"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary">+ Tambah ke Keranjang</button>
+        </form>
+      </section>
+
+      <!-- KERANJANG BELANJA -->
+      <section class="card cart-section">
+        <div class="cart-header">
+          <h2>Keranjang Belanja</h2>
+          <button type="button" id="btn-reset" class="btn btn-danger">Transaksi Baru / Reset</button>
+        </div>
+
+        <div class="table-wrapper">
+          <table id="cart-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Barang</th>
+                <th>Harga Satuan</th>
+                <th>Qty</th>
+                <th>Subtotal</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="cart-body"></tbody>
+          </table>
+          <p id="empty-cart-message">Keranjang belanja masih kosong. Silakan tambahkan barang.</p>
+        </div>
+      </section>
+
+      <!-- RINGKASAN & PEMBAYARAN -->
+      <section class="card summary-section">
+        <h2>Ringkasan &amp; Pembayaran</h2>
+
+        <div class="form-group promo-group">
+          <label for="promo-code">Kode Promo</label>
+          <div class="promo-input-row">
+            <input type="text" id="promo-code" placeholder="Contoh: HEMAT10" autocomplete="off" />
+            <button type="button" id="btn-apply-promo" class="btn btn-secondary">Terapkan</button>
+          </div>
+          <span class="info-message" id="promo-message"></span>
+        </div>
+
+        <div class="summary-rows">
+          <div class="summary-row">
+            <span>Total Belanja</span>
+            <span id="summary-subtotal">Rp 0</span>
+          </div>
+          <div class="summary-row discount-row">
+            <span>Diskon (<span id="discount-percent">0</span>%)</span>
+            <span id="summary-discount">- Rp 0</span>
+          </div>
+          <div class="summary-row total-row">
+            <span>Total Akhir</span>
+            <span id="summary-total">Rp 0</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="payment-amount">Uang Bayar (Rp)</label>
+          <input type="number" id="payment-amount" placeholder="Masukkan nominal uang" min="0" />
+        </div>
+
+        <div class="summary-rows">
+          <div class="summary-row change-row">
+            <span>Kembalian</span>
+            <span id="summary-change">Rp 0</span>
+          </div>
+        </div>
+        <p class="error-message" id="payment-message"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

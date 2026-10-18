@@ -1,0 +1,274 @@
+/* ===== Reset & Base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #f2f4f7;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* ===== Header ===== */
+.app-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  color: #1d4ed8;
+}
+
+.app-header p {
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* ===== Layout ===== */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1.1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  color: #111827;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 8px;
+}
+
+/* ===== Form ===== */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-group input.input-error {
+  border-color: #dc2626;
+}
+
+.error-message {
+  display: block;
+  color: #dc2626;
+  font-size: 0.82rem;
+  margin-top: 4px;
+  min-height: 1.1em;
+}
+
+.info-message {
+  display: block;
+  font-size: 0.82rem;
+  margin-top: 6px;
+  min-height: 1.1em;
+}
+
+.info-message.success {
+  color: #16a34a;
+}
+
+.info-message.error {
+  color: #dc2626;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: transform 0.05s ease, opacity 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #fff;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  opacity: 0.9;
+}
+
+.btn-delete {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 6px 10px;
+  font-size: 0.82rem;
+  border-radius: 6px;
+}
+
+.btn-delete:hover {
+  background-color: #fecaca;
+}
+
+/* ===== Cart Section ===== */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.cart-header h2 {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+#cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+#cart-table th,
+#cart-table td {
+  padding: 10px 8px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+#cart-table th {
+  background-color: #f9fafb;
+  color: #374151;
+  font-weight: 600;
+}
+
+#cart-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+#empty-cart-message {
+  text-align: center;
+  color: #9ca3af;
+  padding: 24px 0;
+  font-style: italic;
+}
+
+/* ===== Summary Section ===== */
+.promo-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.promo-input-row input {
+  flex: 1;
+}
+
+.summary-rows {
+  margin: 16px 0;
+  border-top: 1px dashed #d1d5db;
+  padding-top: 12px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 0.95rem;
+}
+
+.discount-row span:last-child {
+  color: #16a34a;
+}
+
+.total-row {
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 6px;
+  padding-top: 10px;
+}
+
+.change-row {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #2563eb;
+}
+
+.change-row.insufficient span:last-child {
+  color: #dc2626;
+}

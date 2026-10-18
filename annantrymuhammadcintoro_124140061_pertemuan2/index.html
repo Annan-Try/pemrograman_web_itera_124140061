@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Mahasiswa</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="app-header">
+      <div class="header-top">
+        <h1>📊 Dashboard Mahasiswa</h1>
+        <p id="clock" class="clock">Memuat waktu...</p>
+      </div>
+
+      <div class="header-widgets">
+        <!-- WIDGET KUTIPAN HARIAN -->
+        <section class="card quote-card">
+          <div class="card-title-row">
+            <h2>💡 Kutipan Hari Ini</h2>
+            <button type="button" id="btn-refresh-quote" class="btn-icon" title="Ambil kutipan baru">🔄</button>
+          </div>
+          <blockquote id="quote-text">Memuat kutipan...</blockquote>
+          <p id="quote-author" class="quote-author"></p>
+        </section>
+
+        <!-- WIDGET CUACA -->
+        <section class="card weather-card">
+          <h2>🌦️ Cuaca ITERA</h2>
+          <div id="weather-box" class="weather-box">
+            <p>Memuat cuaca...</p>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <!-- FORM TAMBAH TUGAS -->
+      <section class="card form-section">
+        <h2>➕ Tambah Tugas</h2>
+        <form id="task-form" novalidate>
+          <div class="form-group">
+            <label for="task-title">Judul Tugas</label>
+            <input type="text" id="task-title" placeholder="Contoh: Laporan Praktikum PAW" required />
+          </div>
+
+          <div class="form-group">
+            <label for="task-due">Tenggat Waktu</label>
+            <input type="date" id="task-due" />
+          </div>
+
+          <div class="form-group">
+            <label for="task-priority">Prioritas</label>
+            <select id="task-priority">
+              <option value="tinggi">Tinggi</option>
+              <option value="sedang" selected>Sedang</option>
+              <option value="rendah">Rendah</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary">+ Tambah Tugas</button>
+        </form>
+
+        <div class="stats-row">
+          <div class="stat-box">
+            <span id="stat-total">0</span>
+            <small>Total</small>
+          </div>
+          <div class="stat-box">
+            <span id="stat-pending">0</span>
+            <small>Belum Selesai</small>
+          </div>
+          <div class="stat-box">
+            <span id="stat-done">0</span>
+            <small>Selesai</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- DAFTAR TUGAS -->
+      <section class="card task-section">
+        <div class="task-header">
+          <h2>📝 Daftar Tugas Kuliah</h2>
+          <div class="filter-group">
+            <button type="button" class="filter-btn active" data-filter="all">Semua</button>
+            <button type="button" class="filter-btn" data-filter="pending">Belum Selesai</button>
+            <button type="button" class="filter-btn" data-filter="completed">Selesai</button>
+          </div>
+        </div>
+
+        <ul id="task-list" class="task-list"></ul>
+        <p id="empty-task-message" class="empty-message" hidden>Belum ada tugas. Tambahkan tugas pertamamu!</p>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Dashboard Mahasiswa &mdash; Dibuat untuk membantu organisasi tugas sehari-hari.</p>
+    </footer>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

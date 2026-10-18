@@ -45,15 +45,15 @@ Checklist fitur yang sudah diimplementasikan:
 
 ### Form input utama
 
-![Tampilan form input utama](../Form%20input.png)
+![Tampilan form input utama](Form%20input.png)
 
 ### Validasi error
 
-![Tampilan pesan validasi error](../Form%20error.png)
+![Tampilan pesan validasi error](Form%20error.png)
 
 ### Keranjang dan hasil perhitungan
 
-![Tampilan keranjang, diskon, dan hasil perhitungan pembayaran](../Form%20eksekusi.png)
+![Tampilan keranjang, diskon, dan hasil perhitungan pembayaran](Form%20eksekusi.png)
 
 ## Cara Menjalankan
 

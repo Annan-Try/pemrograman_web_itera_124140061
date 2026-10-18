@@ -2,47 +2,74 @@
 
 Aplikasi web sederhana untuk simulasi kasir kantin/toko kampus. Dibuat menggunakan **HTML, CSS, dan JavaScript murni (vanilla)** tanpa framework, dengan penyimpanan data keranjang belanja menggunakan **localStorage**.
 
+## Identitas
+
+- **Nama**: Annan Try Muhammad Cintoro
+- **NIM**: 124140061
+- **Mata Praktikum**: Pemrograman Website
+- **Kelas Praktikum**: RA
+
+## Deskripsi Aplikasi
+
+Mini POS adalah aplikasi kasir sederhana untuk membantu simulasi transaksi kantin atau toko kampus. Aplikasi ini dibuat sebagai latihan membangun aplikasi web interaktif menggunakan HTML, CSS, dan JavaScript, termasuk validasi input, perhitungan transaksi, dan penyimpanan data di browser.
+
+Pengguna dapat memasukkan barang ke keranjang, melihat subtotal dan total belanja, menerapkan diskon, lalu menghitung kembalian berdasarkan uang yang dibayarkan.
+
 ## Struktur Proyek
 
 ```
-Praktikum PAW/
-├── index.html        # Struktur halaman (form, tabel keranjang, ringkasan)
+annantrymuhammadcintoro_124140061_pertemuan1/
+├── index.html       # Struktur halaman (form, tabel keranjang, ringkasan)
 ├── css/
-│   └── style.css     # Styling tampilan & layout responsif
+│   └── style.css    # Styling tampilan & layout responsif
 ├── js/
-│   └── app.js         # Seluruh logika aplikasi (validasi, kalkulator, localStorage)
+│   └── app.js       # Seluruh logika aplikasi (validasi, kalkulator, localStorage)
 └── README.md
 ```
 
 ## Fitur Utama
 
-### 1. Validasi Form Input Barang
-- **Nama Barang**: wajib diisi, minimal 3 karakter.
-- **Harga Satuan**: wajib angka positif, minimal Rp 500.
-- **Jumlah/Qty**: wajib angka bulat, minimal 1.
-- Pesan error ditampilkan berwarna merah tepat di bawah input yang salah.
-- Jika semua input valid, barang ditambahkan ke keranjang dan form otomatis di-reset.
+Checklist fitur yang sudah diimplementasikan:
 
-### 2. Kalkulator & Perhitungan Otomatis
-- **Subtotal per item** = Harga Satuan × Qty, dihitung otomatis setiap baris.
-- **Total Belanja** = akumulasi seluruh subtotal pada keranjang.
-- **Diskon otomatis 10%** diberikan jika total belanja mencapai minimal Rp 50.000.
-- **Kode promo** `HEMAT10` juga dapat dimasukkan secara manual untuk mendapatkan diskon 10% (berguna jika total belanja belum mencapai batas otomatis).
-- **Total Akhir** = Total Belanja − Diskon.
-- **Kalkulator Pembayaran**: input "Uang Bayar" akan otomatis menghitung kembalian (`Kembalian = Uang Bayar − Total Akhir`). Jika uang yang dibayarkan kurang, sistem menampilkan keterangan nominal kekurangannya.
+- [x] Validasi nama barang wajib diisi dan minimal 3 karakter.
+- [x] Validasi harga berupa angka minimal Rp 500 dan jumlah berupa bilangan bulat minimal 1.
+- [x] Menampilkan pesan error pada input yang tidak valid; barang hanya ditambahkan jika form valid.
+- [x] Menampilkan barang di tabel keranjang, menghitung subtotal per barang, serta menghapus barang dan memperbarui perhitungan.
+- [x] Menghitung total belanja dan memberi diskon otomatis 10% jika total mencapai Rp 50.000.
+- [x] Menerapkan kode promo `HEMAT10` untuk diskon 10%.
+- [x] Menghitung total akhir, kembalian, dan menampilkan kekurangan jika uang bayar belum mencukupi.
+- [x] Menyimpan keranjang ke `localStorage` dengan `JSON.stringify()` dan memuatnya kembali dengan `JSON.parse()` saat aplikasi dibuka.
+- [x] Mengosongkan keranjang dan data tersimpan melalui tombol **Transaksi Baru / Reset**.
 
-### 3. Manajemen Keranjang & LocalStorage
-- Barang yang ditambahkan langsung tampil pada tabel keranjang (No, Nama Barang, Harga Satuan, Qty, Subtotal, Aksi).
-- Tombol **Hapus** pada setiap baris akan menghapus item tersebut, lalu total & diskon dihitung ulang secara otomatis.
-- Data keranjang disimpan ke `localStorage` menggunakan `JSON.stringify()` setiap kali terjadi perubahan (tambah/hapus), dan dimuat kembali menggunakan `JSON.parse()` saat halaman dibuka/di-refresh — sehingga isi keranjang tidak hilang.
-- Tombol **Transaksi Baru / Reset** akan mengosongkan seluruh keranjang beserta `localStorage`, serta mereset kolom promo dan pembayaran.
+## Tangkapan Layar
+
+### Form input utama
+
+![Tampilan form input utama](../Form%20input.png)
+
+### Validasi error
+
+![Tampilan pesan validasi error](../Form%20error.png)
+
+### Keranjang dan hasil perhitungan
+
+![Tampilan keranjang, diskon, dan hasil perhitungan pembayaran](../Form%20eksekusi.png)
 
 ## Cara Menjalankan
 
-Tidak memerlukan instalasi atau server khusus:
+Tidak memerlukan instalasi dependency atau server backend.
 
-1. Buka file `index.html` langsung di browser (double click), **atau**
-2. Jalankan melalui Live Server (ekstensi VS Code) untuk pengalaman reload otomatis saat development.
+### Menggunakan browser lokal
+
+1. Buka folder proyek ini.
+2. Buka file `index.html` dengan klik dua kali atau pilih browser melalui **Open with**.
+
+### Menggunakan Live Server di VS Code
+
+1. Buka folder proyek ini di VS Code.
+2. Pasang ekstensi **Live Server** jika belum tersedia.
+3. Buka `index.html`, lalu klik **Go Live** pada status bar atau klik kanan file dan pilih **Open with Live Server**.
+4. Aplikasi akan terbuka di browser. Perubahan file dapat dilihat dengan memuat ulang halaman.
 
 ## Teknologi
 
@@ -56,3 +83,9 @@ Tidak memerlukan instalasi atau server khusus:
 - Fungsi-fungsi di `js/app.js` dikelompokkan menjadi beberapa bagian dengan komentar penanda: **State & Konstanta**, **Referensi DOM**, **Util/Helper**, **Validasi Form**, **Manajemen Keranjang**, **Kalkulator**, dan **Event Listeners & Inisialisasi** — agar mudah dibaca dan dikembangkan lebih lanjut.
 - Nama barang di-escape (`escapeHtml`) sebelum dirender ke tabel untuk mencegah masalah injeksi HTML sederhana.
 - Tampilan sudah responsif: pada layar lebar, form/tabel/ringkasan ditampilkan berdampingan (3 kolom); pada layar sempit (mobile), otomatis bertumpuk menjadi 1 kolom.
+
+## Penjelasan Teknis Singkat
+
+- **Validasi input:** saat form dikirim, `handleAddItem()` mengambil nilai input dan memanggil `validateItemForm()`. Fungsi tersebut memeriksa nama, harga, dan jumlah lalu mengembalikan status validasi beserta pesan error. Jika tidak valid, pesan ditampilkan di bawah input yang bermasalah; jika valid, barang dimasukkan ke state keranjang dan tabel dirender ulang.
+- **Kalkulator keuangan:** `calculateCartSubtotal()` menjumlahkan hasil perkalian harga dan jumlah setiap barang. `updateCalculations()` menentukan diskon 10% jika total minimal Rp 50.000 atau kode promo `HEMAT10` aktif, kemudian menghitung total akhir. `updatePaymentCalculation()` membandingkan uang bayar dengan total akhir untuk menampilkan kembalian atau nominal kekurangan.
+- **LocalStorage:** setelah barang ditambah atau dihapus, `saveCartToStorage()` mengubah state keranjang menjadi string JSON dengan `JSON.stringify()` dan menyimpannya pada key `miniPos_cart`. Saat aplikasi dimulai, `loadCartFromStorage()` membaca key tersebut, mengubahnya kembali menjadi data JavaScript dengan `JSON.parse()`, lalu keranjang dirender. Reset transaksi menghapus key tersebut.

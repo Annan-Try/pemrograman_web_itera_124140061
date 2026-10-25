@@ -1,0 +1,21 @@
+.book-search input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border, #e5e4e7);
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--input-bg);
+  color: var(--text-h);
+}
+
+.book-search input::placeholder {
+  color: var(--text, #6b6375);
+  opacity: 0.8;
+}
+
+.book-search input:focus {
+  outline: 2px solid var(--accent, #aa3bff);
+  outline-offset: 1px;
+}

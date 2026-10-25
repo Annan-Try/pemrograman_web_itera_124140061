@@ -1,0 +1,50 @@
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--border, #e5e4e7);
+  border-left: 4px solid var(--accent, #aa3bff);
+  border-radius: 8px;
+  background: var(--card-bg);
+  text-align: left;
+}
+
+.book-item--milik {
+  border-left-color: #2f9e44;
+}
+
+.book-item--baca {
+  border-left-color: #1c7ed6;
+}
+
+.book-item--beli {
+  border-left-color: #f08c00;
+}
+
+.book-item__info h3 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  color: var(--text-h);
+}
+
+.book-item__info p {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+.book-item__status {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--accent-bg, rgba(170, 59, 255, 0.1));
+  color: var(--accent, #aa3bff);
+}
+
+.book-item__actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}

@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border, #e5e4e7);
+}
+
+.navbar__title {
+  margin: 0;
+  font-size: 22px;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 18px;
+}
+
+.navbar__links a {
+  text-decoration: none;
+  color: var(--text, #6b6375);
+  font-weight: 600;
+  padding: 6px 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar__links a.is-active {
+  color: var(--accent, #aa3bff);
+  border-bottom-color: var(--accent, #aa3bff);
+}

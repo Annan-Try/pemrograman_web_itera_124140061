@@ -1,0 +1,26 @@
+.home-page {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  padding: 24px;
+  text-align: left;
+  align-items: start;
+}
+
+.home-page__form-section h2,
+.home-page__list-section h2 {
+  margin-top: 0;
+}
+
+.home-page__toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 800px) {
+  .home-page {
+    grid-template-columns: 1fr;
+  }
+}

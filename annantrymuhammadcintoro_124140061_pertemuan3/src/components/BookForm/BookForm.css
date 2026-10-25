@@ -1,0 +1,60 @@
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.book-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.book-form__field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.book-form__field input,
+.book-form__field select {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border, #e5e4e7);
+  font-size: 15px;
+  font-family: inherit;
+  /* Dipatok eksplisit (bukan ikut warna bawaan browser) supaya kontras tetap
+     konsisten baik di mode terang maupun gelap. */
+  background: var(--input-bg);
+  color: var(--text-h);
+}
+
+.book-form__field input::placeholder {
+  color: var(--text, #6b6375);
+  opacity: 0.8;
+}
+
+.book-form__field input:focus,
+.book-form__field select:focus {
+  outline: 2px solid var(--accent, #aa3bff);
+  outline-offset: 1px;
+}
+
+.input-error {
+  border-color: #e3342f !important;
+}
+
+.error-message {
+  color: #e3342f;
+  font-size: 13px;
+}
+
+.book-form__actions {
+  display: flex;
+  gap: 10px;
+}

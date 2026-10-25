@@ -1,0 +1,54 @@
+.stats-page {
+  padding: 24px;
+  text-align: left;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.stats-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 24px 12px;
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 10px;
+  background: var(--card-bg);
+  text-align: center;
+}
+
+.stats-card__number {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.stats-card__label {
+  font-size: 14px;
+}
+
+.stats-card--milik .stats-card__number {
+  color: #2f9e44;
+}
+
+.stats-card--baca .stats-card__number {
+  color: #1c7ed6;
+}
+
+.stats-card--beli .stats-card__number {
+  color: #f08c00;
+}
+
+.stats-empty {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px dashed var(--border, #e5e4e7);
+  border-radius: 8px;
+  text-align: center;
+}
